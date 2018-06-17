@@ -27,7 +27,7 @@ client.on('message', message =>{
     .setTitle('BOT INFO')
     .setDescription(`•prefix --> S
 BOT COMMANDS
-• || Smass || Ssupport || Sinfo || Ssay || Sping || Sserverinfo || Srestart || `)
+• || Smass || Ssupport || Sinfo || Ssay || Sping || Sserverinfo || Srestart || Sowner ||  `)
     .setColor(0xFF000)
    message.channel.sendEmbed(embed);
   }
