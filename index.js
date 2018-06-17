@@ -139,7 +139,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
     if (msg.content === 'Ssupport') {
-      msg.channel.send('support server ---> https://discord.gg/yfdBKBJ);
+      msg.channel.send('support server ---> https://discord.gg/yfdBKBJ');
     }
   });
 
