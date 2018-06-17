@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "."
+const prefix = "S"
 
 client.on('ready', () => {
-  client.user.setGame('configuring... ' , 'https://www.twitch.tv/lucasdavid913/')
+  client.user.setGame('Shelp ' , 'https://www.twitch.tv/lucasdavid913/')
 })   
 
   client.on('message', message =>{
@@ -25,9 +25,9 @@ client.on('message', message =>{
   if ( message.content.startsWith(prefix+ "help")) {
     const embed = new Discord.RichEmbed()
     .setTitle('BOT INFO')
-    .setDescription(`•prefix --> .
+    .setDescription(`•prefix --> S
 BOT COMMANDS
-• || .mass || .support || .info || .say || .ping || .serverinfo || .restart || `)
+• || Smass || Ssupport || Sinfo || Ssay || Sping || Sserverinfo || Srestart || `)
     .setColor(0xFF000)
    message.channel.sendEmbed(embed);
   }
@@ -35,8 +35,8 @@ BOT COMMANDS
 });
 
 client.on('message', message => {
-    if (message.author.id == '397666298483703810') {
-    if (message.content.startsWith(`.restart`)) {
+    if (message.author.id == '419472407816830986') {
+    if (message.content.startsWith(`Srestart`)) {
             resetBot(message.channel);
     }
   }
@@ -61,6 +61,22 @@ if ( message.content.startsWith(prefix+ "ping")) {
             .setDescription(`\`\`\`md\nPing :${client.ping}ms\`\`\``)
             .setColor(0x4caf50)
             .setFooter('Bot pinged')
+            .setTimestamp()
+        
+        message.channel.send(embed);
+  }
+  
+});
+
+client.on('message', message =>{
+  let args = message.content.split(" ").slice(1);
+  
+if ( message.content.startsWith(prefix+ "owner")) {
+    let embed = new Discord.RichEmbed()
+            .setTitle('My owner is')
+            .setDescription(`<@419472407816830986>`)
+            .setColor(0x4caf50)
+            .setFooter('Owner')
             .setTimestamp()
         
         message.channel.send(embed);
@@ -102,9 +118,9 @@ client.on('message', message =>{
 });  
 
   client.on('message', message => {    
-    if(message.content.startsWith('.mass')) {
-    if(message.author.id === "397666298483703810" ||
-message.author.id === "397666298483703810"){
+    if(message.content.startsWith('Smass')) {
+    if(message.author.id === "419472407816830986" ||
+message.author.id === "419472407816830986"){
        let args = message.content.split(" ").slice(1);         
        var argresult = args.join(" ")      
 const argsresult = args.join(" ")         
@@ -116,25 +132,40 @@ member.send(reason)
 message.delete() }})}}} });
 
 client.on('message', msg => {
-    if (msg.content === '.invite') {
-      msg.channel.send('Invite **Daminian** https://discordapp.com/api/oauth2/authorize?client_id=457549646525628437&permissions=8&scope=bot :tada:');
+    if (msg.content === 'Sinvite') {
+      msg.channel.send('Invite **BOT** https://discordapp.com/oauth2/authorize?client_id=457851089002430464&permissions=8&scope=bot :tada:');
     }
   });
 
 client.on('message', msg => {
-    if (msg.content === '.support') {
-      msg.channel.send('support server ---> https://discord.gg/bprBytJ');
+    if (msg.content === 'Ssupport') {
+      msg.channel.send('support server ---> https://discord.gg/yfdBKBJ);
     }
   });
 
 client.on('message', msg => {
-    if (msg.content === '.info') {
-      msg.channel.send('pentru welcome creaza un channel pe nume `welcome-goodbye` :) ');
+    if (msg.content === 'Sinfo') {
+      msg.channel.send('pentru welcome creaza un channel pe nume `welcome` :) ');
     }
   });
 
+client.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor('#ff0000')
+        .setThumbnail(memberavatar)
+        .addField('✘ | Name: ', `${member}`)
+        .addField('✘ | Goodbye: ', `Welcome ${member}`)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+      
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome-goodbye');
+    let channel = member.guild.channels.find('name', 'welcome');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
