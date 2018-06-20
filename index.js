@@ -5,11 +5,10 @@ const prefix = "f?";
 client.on('ready', () => {
 	console.log('Bot has started!');
 	client.user.setStatus('dnd');
-});
-
-client.user.setActivity(f?help, {
+	client.user.setActivity(f?help, {
         type: "LISTENING"
     })
+});
 
 client.on('message', message => {
 	
