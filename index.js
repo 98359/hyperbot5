@@ -28,4 +28,4 @@ client.on('message', message => {
     }	  		 
 });
 
-client.login(procces.env.TOKEN)
+
